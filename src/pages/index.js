@@ -8,18 +8,19 @@ import CentralMenu from "../components/CentralBar/CentralMenu";
 
 import PostSection from "../components/PostsSection/PostSection";
 import TopBackGround from "../components/BackGrounds/TopBackGround";
+import { Container } from "react-bootstrap";
 
 const Index = ({ data }) => {
   return (
     <Layout className="virgomain">
-      <TopBackGround data={data.contentfulGeneralmedia} />
-
-      {data.contentfulSiteInformation.menus
-        .filter((item) => item === "Blogs")
-        .map((t) => {
-          return <PostSlider key="Blogs" data={data.allContentfulBlogs} />;
-        })}
-
+      <Container>
+        <TopBackGround data={data.contentfulGeneralmedia} />
+        {data.contentfulSiteInformation.menus
+          .filter((item) => item === "Blogs")
+          .map((t) => {
+            return <PostSlider key="Blogs" data={data.allContentfulBlogs} />;
+          })}
+      </Container>
       <CentralMenu></CentralMenu>
 
       {data.contentfulSiteInformation.menus

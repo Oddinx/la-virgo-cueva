@@ -1174,3 +1174,42 @@ body {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
+
+.testeo {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.testeo .gatsby-image-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80.8vh;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: -1;
+}
+
+.testeo2 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.testeo2 .gatsby-image-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: -1;
+  filter: brightness(50%);
+}

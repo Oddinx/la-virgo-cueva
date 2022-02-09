@@ -8,13 +8,13 @@ export default class BlogBackGround extends Component {
     const { data } = this.props;
     return (
       <>
-        <Container>
+        <div class="testeo2">
           <GatsbyImage
-            className="page-background-top"
+            imgClassName="page-background-top"
             image={data.background.gatsbyImageData}
             loading="lazy"
           />
-        </Container>
+        </div>
       </>
     );
   }
