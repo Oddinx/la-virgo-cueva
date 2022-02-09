@@ -1,6 +1,6 @@
 import React from "react";
 
-import MainNavbar from "./MainNavBar/MainNavbar";
+import MainNavBar from "./MainNavBar/MainNavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "../styles/Virgo.css";
@@ -8,7 +8,7 @@ import "../styles/Virgo.css";
 const Layout = ({ children, ...props }) => {
   return (
     <>
-      <MainNavbar auth={props.auth} />
+      <MainNavBar auth={props.auth} />
       {children}
     </>
   );
