@@ -14,14 +14,14 @@ import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 
 import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
-import arcade from "../images/carl-raw-m3hn2Kn5Bns-unsplash.jpg";
+
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import TopBackGround from "../components/BackGrounds/TopBackGround";
 
 const BlogList = ({ data, pageContext }) => {
-  const { numPages, limit, skip, pageNumber } = pageContext;
+  const { numPages, pageNumber } = pageContext;
   return (
     <Layout className="virgomain">
       <TopBackGround data={data.contentfulGeneralmedia} />
