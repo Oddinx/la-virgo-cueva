@@ -43,6 +43,8 @@ export default class BlogTemplate extends Component {
         <Layout>
           <SEO
             title={data.title}
+            descripcion={data.descripcion.descripcion}
+            image={data.imagen.file.url}
             keywords={[`Oddinx`, `Friki`, `Otaku`, `${data.title}`]}
           />
           <BlogBackGround data={this.props.data.contentfulGeneralmedia} />
@@ -179,8 +181,12 @@ export const pageQuery = graphql`
 
       imagen {
         gatsbyImageData(width: 740)
+        file {
+          url
+        }
       }
       descripcion {
+        descripcion
         childMarkdownRemark {
           html
         }

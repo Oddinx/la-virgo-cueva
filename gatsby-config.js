@@ -7,6 +7,7 @@ module.exports = {
       "Blogs,Mangas,Anime,Videojuegos,Waifus,Reseñas y cosas relacionadas al frikismo o lo otaku ",
     author: "Oddinx",
     siteUrl: `https://lavirgocuevadelhikikomori.ga`,
+    image: "src/images/VIRGOCUEVALOGO2.png",
   },
   plugins: [
     {
