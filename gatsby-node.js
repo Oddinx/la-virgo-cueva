@@ -10,7 +10,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
     const blogtemplate = path.resolve("./src/Templates/blogtemplate.jsx");
-    const blogListTemplate = path.resolve(`src/pages/BlogList.js`);
+    const blogListTemplate = path.resolve(`src/Templates/BlogList.js`);
     resolve(
       graphql(`
         {
@@ -42,6 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
                 pageNumber: index + 1,
                 hasNextPage: index != chunks.length - 1,
                 nextPageLink: `/BlogList/${index + 2}`,
+
                 numPages,
               },
             });
@@ -58,6 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
               hasPrevious: index != 0,
               previousPageLink: `/BlogList/${index--}`,
               isOne: index != 1,
+
               numPages,
             },
           });

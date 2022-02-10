@@ -2,7 +2,11 @@ require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
 
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "La Virgo Cueva del Hikikomori",
+    description:
+      "Blogs,Mangas,Anime,Videojuegos,Waifus,Reseñas y cosas relacionadas al frikismo o lo otaku ",
+    author: "Oddinx",
+    siteUrl: `https://lavirgocuevadelhikikomori.ga`,
   },
   plugins: [
     {
@@ -21,9 +25,11 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    "gatsby-plugin-netlify",
     "gatsby-plugin-image",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-react-helmet`,
   ],
 };

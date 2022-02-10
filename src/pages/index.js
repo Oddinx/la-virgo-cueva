@@ -10,9 +10,24 @@ import PostSection from "../components/PostsSection/PostSection";
 import TopBackGround from "../components/BackGrounds/TopBackGround";
 import { Container } from "react-bootstrap";
 
+import SEO from "../components/SEO";
+
 const Index = ({ data }) => {
   return (
-    <Layout className="virgomain">
+    <Layout className="virgomain" data={data}>
+      <SEO
+        title={data.contentfulSiteInformation.siteName}
+        keywords={[
+          `Oddinx`,
+          `Comics`,
+          `Manga`,
+          `VideoJuegos`,
+          `Gamer`,
+          `Anime`,
+          `Friki`,
+          `Otaku`,
+        ]}
+      />
       <Container>
         <TopBackGround data={data.contentfulGeneralmedia} />
         {data.contentfulSiteInformation.menus
@@ -62,6 +77,9 @@ export const pageQuery = graphql`
 
     contentfulSiteInformation {
       menus
+      siteName
+      siteUrl
+      siteDescription
     }
   }
 `;

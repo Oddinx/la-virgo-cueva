@@ -5,10 +5,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { graphql } from "gatsby";
 
-import Col from "react-bootstrap/Col";
-
-import Image from "react-bootstrap/Image";
-
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
 
 import { FaRss } from "@react-icons/all-files/fa/FaRss";
@@ -27,13 +23,28 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 import BlogBackGround from "../components/BackGrounds/BlogBackGround";
 
+import { DiscussionEmbed } from "disqus-react";
+
+import SEO from "../components/SEO";
+
 export default class BlogTemplate extends Component {
   render() {
     const data = this.props.data.contentfulBlogs;
+    const disqusShortname = "https-lavirgocuevadelhikikomori-ga-1";
 
+    const disqusConfig = {
+      identifier: data.id,
+      title: data.title,
+    };
+    const siteurl =
+      this.props.data.contentfulSiteInformation.siteUrl + "/" + data.slug;
     return (
       <>
         <Layout>
+          <SEO
+            title={data.title}
+            keywords={[`Oddinx`, `Friki`, `Otaku`, `${data.title}`]}
+          />
           <BlogBackGround data={this.props.data.contentfulGeneralmedia} />
           <div class="gap-2"></div>
           <div class="gap-2"></div>
@@ -138,6 +149,13 @@ export default class BlogTemplate extends Component {
                   </div>
                 </aside>
               </div>
+
+              <div class="comments">
+                <DiscussionEmbed
+                  shortname={disqusShortname}
+                  config={disqusConfig}
+                />
+              </div>
             </Row>
           </Container>
         </Layout>
@@ -169,7 +187,11 @@ export const pageQuery = graphql`
     }
 
     contentfulSiteInformation {
+      siteUrl
       menus
+      siteName
+
+      siteDescription
     }
   }
 `;

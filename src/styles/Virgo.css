@@ -1213,3 +1213,50 @@ body {
   z-index: -1;
   filter: brightness(50%);
 }
+
+.comments .comment::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.comments .comment h4 {
+  margin-top: 25px;
+}
+
+.comments .comment .comment {
+  margin-left: 120px;
+}
+
+@media (max-width: 767px) {
+  .comments .comment .comment {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 575px) {
+  .comments .comment .comment {
+    margin-left: 30px;
+  }
+}
+
+.comments .comment .comment,
+.comments .comment + .comment {
+  padding-top: 20px;
+  clear: both;
+}
+
+.comments .comment .comment-meta {
+  margin-bottom: 15px;
+  font-size: 0.8em;
+}
+
+.comments .comment .comment-meta img {
+  height: auto;
+  margin-right: 11px;
+}
+
+.comments .comment .comment-text {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #293139;
+}

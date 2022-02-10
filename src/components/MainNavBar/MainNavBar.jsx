@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import Logo from "../../images/VIRGOCUEVALOGO2.png";
 
-const MainNavbar = () => {
+const MainNavbar = ({}) => {
   return (
     <>
       <Navbar className="navbar-virgo">
@@ -18,7 +18,7 @@ const MainNavbar = () => {
           <Nav className="virgo-nav">
             <div className="row">
               <div className="col-sm">
-                <Link className="virgo-nav-link" to={`/BlogList`}>
+                <Link className="virgo-nav-link" to={`/BlogList/`}>
                   Blogs
                 </Link>
               </div>

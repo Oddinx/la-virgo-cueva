@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import Container from "react-bootstrap/Container";
 
-import arcade from "../../images/carl-raw-m3hn2Kn5Bns-unsplash.jpg";
 import { GatsbyImage } from "gatsby-plugin-image";
 export default class BlogBackGround extends Component {
   render() {

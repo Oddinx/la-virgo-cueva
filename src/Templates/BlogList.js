@@ -15,15 +15,30 @@ import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
 
 import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
 
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
+
+import SEO from "../components/SEO";
+
 import TopBackGround from "../components/BackGrounds/TopBackGround";
 
 const BlogList = ({ data, pageContext }) => {
   const { numPages, pageNumber } = pageContext;
   return (
     <Layout className="virgomain">
+      <SEO
+        title={data.contentfulSiteInformation.siteName}
+        keywords={[
+          `Oddinx`,
+          `Comics`,
+          `Manga`,
+          `VideoJuegos`,
+          `Gamer`,
+          `Anime`,
+          `Friki`,
+          `Otaku`,
+        ]}
+      />
       <TopBackGround data={data.contentfulGeneralmedia} />
       <div class="gap-1"></div>
       <div class="gap-1"></div>
@@ -209,6 +224,9 @@ export const pageQuery = graphql`
 
     contentfulSiteInformation {
       menus
+      siteName
+      siteUrl
+      siteDescription
     }
   }
 `;
