@@ -74,11 +74,12 @@ export default class BlogTemplate extends Component {
                     <h1 class="post-title h4">{data.title}</h1>
 
                     <div class="gap"></div>
-                    <p
+                    <div
+                      class="centerpost"
                       dangerouslySetInnerHTML={{
-                        __html: data.descripcion.childMarkdownRemark.html,
+                        __html: data.contenido.childMarkdownRemark.html,
                       }}
-                    ></p>
+                    ></div>
 
                     <div class="gap"></div>
 
@@ -170,6 +171,12 @@ export const pageQuery = graphql`
       id
       title
       slug
+      contenido {
+        childMarkdownRemark {
+          html
+        }
+      }
+
       imagen {
         gatsbyImageData(width: 740)
       }
