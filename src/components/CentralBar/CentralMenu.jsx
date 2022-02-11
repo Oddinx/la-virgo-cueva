@@ -26,10 +26,10 @@ const CentralMenu = () => {
               </div>
               <div class="central-feature-cont">
                 <h3 class="central-feature-title">
-                  <Link to={`/BlogList`}>Blog</Link>
+                  <Link to={`/BlogList/`}>Blog</Link>
                 </h3>
                 <h4 class="central-feature-titleb text-main-1">
-                  <Link to={`/BlogList`}>Ver más</Link>
+                  <Link to={`/BlogList/`}>Ver más</Link>
                 </h4>
               </div>
             </div>
@@ -41,10 +41,10 @@ const CentralMenu = () => {
               </div>
               <div class="central-feature-cont">
                 <h3 class="central-feature-title">
-                  <Link to={`/BlogList`}>Juegos</Link>
+                  <Link to={`/JuegosList/`}>Juegos</Link>
                 </h3>
                 <h4 class="central-feature-titleb text-main-1">
-                  <Link to={`/BlogList`}>Ver Más</Link>
+                  <Link to={`/JuegosList/`}>Ver Más</Link>
                 </h4>
               </div>
             </div>
@@ -56,10 +56,10 @@ const CentralMenu = () => {
               </div>
               <div class="central-feature-cont">
                 <h3 class="central-feature-title">
-                  <Link to={`/BlogList`}>Reseñas</Link>
+                  <Link to={`/ReviewList/`}>Reseñas</Link>
                 </h3>
                 <h4 class="central-feature-titleb text-main-1">
-                  <Link to={`/BlogList`}>Ver Más</Link>
+                  <Link to={`/ReviewList/`}>Ver Más</Link>
                 </h4>
               </div>
             </div>

@@ -12,6 +12,10 @@ import { Container } from "react-bootstrap";
 
 import SEO from "../components/SEO";
 
+import Juegos from "../components/PostsSection/Juegos";
+
+import Reviews from "../components/PostsSection/Reviews";
+
 const Index = ({ data }) => {
   return (
     <Layout className="virgomain" data={data}>
@@ -43,6 +47,18 @@ const Index = ({ data }) => {
         .map((t) => {
           return <PostSection key="Blogs" data={data.allContentfulBlogs} />;
         })}
+
+      {data.contentfulSiteInformation.menus
+        .filter((item) => item === "Blogs")
+        .map((t) => {
+          return <Juegos key="Blogs" data={data.Juegos} />;
+        })}
+
+      {data.contentfulSiteInformation.menus
+        .filter((item) => item === "Blogs")
+        .map((t) => {
+          return <Reviews key="Blogs" data={data.Reviews} />;
+        })}
     </Layout>
   );
 };
@@ -51,7 +67,52 @@ export default Index;
 
 export const pageQuery = graphql`
   query {
-    allContentfulBlogs(limit: 8) {
+    allContentfulBlogs(
+      limit: 4
+      filter: { metadata: { tags: { elemMatch: { name: { eq: "Blogs" } } } } }
+    ) {
+      edges {
+        node {
+          title
+          slug
+          imagen {
+            gatsbyImageData(width: 360)
+            file {
+              url
+            }
+          }
+          descripcion {
+            descripcion
+          }
+        }
+      }
+    }
+
+    Reviews: allContentfulBlogs(
+      limit: 4
+      filter: { metadata: { tags: { elemMatch: { name: { eq: "Reviews" } } } } }
+    ) {
+      edges {
+        node {
+          title
+          slug
+          imagen {
+            gatsbyImageData(width: 360)
+            file {
+              url
+            }
+          }
+          descripcion {
+            descripcion
+          }
+        }
+      }
+    }
+
+    Juegos: allContentfulBlogs(
+      limit: 4
+      filter: { metadata: { tags: { elemMatch: { name: { eq: "Juegos" } } } } }
+    ) {
       edges {
         node {
           title

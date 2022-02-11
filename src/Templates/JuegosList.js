@@ -22,8 +22,8 @@ import SEO from "../components/SEO";
 
 import TopBackGround from "../components/BackGrounds/TopBackGround";
 
-const BlogList = ({ data, pageContext }) => {
-  const { numPages, pageNumber } = pageContext;
+const JuegosList = ({ data, pageContext }) => {
+  const { JuegosnumPages, pageNumber } = pageContext;
   return (
     <Layout className="virgomain">
       <SEO
@@ -46,7 +46,7 @@ const BlogList = ({ data, pageContext }) => {
       <Container>
         <ul class="breadcrumbs">
           <li>
-            <span>Blog List</span>
+            <span>Juegos</span>
           </li>
         </ul>
       </Container>
@@ -71,10 +71,7 @@ const BlogList = ({ data, pageContext }) => {
                       </div>
                       <div class="col-md-7 col-lg-6">
                         <h2 class="post-title h4">
-                          <Link
-                            href="blog-article.html"
-                            to={`/${item.node.slug}`}
-                          >
+                          <Link to={`/${item.node.slug}`}>
                             {item.node.title}
                           </Link>
                         </h2>
@@ -94,10 +91,10 @@ const BlogList = ({ data, pageContext }) => {
                 )}
 
                 <nav>
-                  {Array.from({ length: numPages }, (_, i) => (
+                  {Array.from({ length: JuegosnumPages }, (_, i) => (
                     <Link
                       key={`pagination-number${i + 1}`}
-                      to={i === 0 ? "/BlogList/" : `/BlogList/${i + 1}`}
+                      to={i === 0 ? "/JuegosList/" : `/JuegosList/${i + 1}`}
                       className={
                         i + 1 === pageNumber ? "pagination-current" : ""
                       }
@@ -188,15 +185,15 @@ const BlogList = ({ data, pageContext }) => {
   );
 };
 
-export default BlogList;
+export default JuegosList;
 
 export const pageQuery = graphql`
-  query PostListingQuery($skip: Int, $limit: Int) {
+  query JuegosPostListingQuery($skip: Int, $limit: Int) {
     allContentfulBlogs(
       sort: { fields: createdAt, order: DESC }
       skip: $skip
       limit: $limit
-      filter: { metadata: { tags: { elemMatch: { name: { eq: "Blogs" } } } } }
+      filter: { metadata: { tags: { elemMatch: { name: { eq: "Juegos" } } } } }
     ) {
       edges {
         node {

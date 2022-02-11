@@ -24,12 +24,12 @@ const MainNavbar = ({}) => {
               </div>
 
               <div className="col-sm">
-                <Link className="virgo-nav-link" to={`/BlogList`}>
+                <Link className="virgo-nav-link" to={`/JuegosList/`}>
                   Juegos
                 </Link>
               </div>
               <div className="col-sm">
-                <Link className="virgo-nav-link" to={`/BlogList`}>
+                <Link className="virgo-nav-link" to={`/ReviewList/`}>
                   Reviews
                 </Link>
               </div>

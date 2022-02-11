@@ -68,7 +68,7 @@ export default class PostSection extends Component {
                             className="btn btn-rounded btn-color-dark-3 btn-hover-color-main-1"
                             to={`/${item.node.slug}`}
                           >
-                            Read More
+                            Leer Más
                           </Link>
                         </div>
                       </Col>
@@ -113,7 +113,10 @@ export default class PostSection extends Component {
                         </a>
                       </li>
                       <li>
-                        <a class="social-facebook" href="#">
+                        <a
+                          class="social-facebook"
+                          href="https://www.facebook.com/La-Virgo-Cueva-Del-Hikikomori-107090375188639"
+                        >
                           <FaFacebook className="svgl" />
                         </a>
                       </li>
