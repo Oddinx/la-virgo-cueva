@@ -94,7 +94,7 @@ const JuegosList = ({ data, pageContext }) => {
                   {Array.from({ length: ReviewnumPages }, (_, i) => (
                     <Link
                       key={`pagination-number${i + 1}`}
-                      to={i === 0 ? "/JuegosList/" : `/JuegosList/${i + 1}`}
+                      to={i === 0 ? "/ReviewList/" : `/ReviewList/${i + 1}`}
                       className={
                         i + 1 === pageNumber ? "pagination-current" : ""
                       }
@@ -103,16 +103,7 @@ const JuegosList = ({ data, pageContext }) => {
                     </Link>
                   ))}
                 </nav>
-                <div>
-                  {pageContext && pageContext.hasNextPage && (
-                    <Link
-                      ClassName=" pagination-next"
-                      to={pageContext.nextPageLink}
-                    >
-                      Siguiente
-                    </Link>
-                  )}
-                </div>
+                <div></div>
               </div>
             </div>
           </Col>
